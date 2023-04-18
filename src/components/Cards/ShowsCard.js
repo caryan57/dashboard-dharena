@@ -14,7 +14,7 @@ export default class ShowsCard extends Component {
   }
 
   getAllShows(){
-    fetch('http://localhost:3000/api/shows')
+    fetch('http://localhost:3005/api/shows')
     .then(response => response.json())
     .then(data => {
       this.setState({ cuantity: data.meta.total })

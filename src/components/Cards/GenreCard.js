@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import SmallCard from './SmallCard';
 
-export default class UsersCard extends Component {
+export default class GenreCard extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Total de Usuarios',
+      title: 'Total de generos',
       cuantity: 0,
-      color: 'primary',
-      icon: 'fas fa-user'
+      color: 'warning',
+      icon: 'fas fa-music'
     };
   }
 
-  getAllUsers(){
-    fetch('http://localhost:3005/api/users')
+  getAllGenre(){
+    fetch('http://localhost:3005/api/categories')
     .then(response => response.json())
     .then(data => {
       this.setState({ cuantity: data.meta.total })
@@ -23,7 +23,7 @@ export default class UsersCard extends Component {
   }
 
   componentDidMount(){
-    this.getAllUsers();
+    this.getAllGenre();
   }
 
   render() {
@@ -34,3 +34,4 @@ export default class UsersCard extends Component {
     )
   }
 }
+
