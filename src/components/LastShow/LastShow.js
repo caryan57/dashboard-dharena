@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import LastShowInDb from './LastMovieInDb';
+import LastShowInDb from './LastShowsInDb';
 
 export default class LastShow extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       image: [],
       description: [],
