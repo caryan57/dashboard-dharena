@@ -1,6 +1,6 @@
 import React from "react";
 
-function LastMovieInDb(props) {
+function GenresInDb() {
   return (
     <React.Fragment>
     <div className="col-lg-6 mb-4">
@@ -14,5 +14,4 @@ function LastMovieInDb(props) {
   );
 }
 
-export default LastMovieInDb;
-
+export default GenresInDb;

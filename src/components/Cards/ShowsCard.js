@@ -13,17 +13,17 @@ export default class ShowsCard extends Component {
     };
   }
 
-  getAllShows(){
-    fetch('http://localhost:3005/api/shows')
+  getCount(){
+    fetch('http://localhost:3005/api/shows/count')
     .then(response => response.json())
     .then(data => {
-      this.setState({ cuantity: data.meta.total })
+      this.setState({ cuantity: data.data })
     })
     .catch(error => console.log(error));
   }
 
   componentDidMount(){
-    this.getAllShows();
+    this.getCount();
   }
 
   render() {

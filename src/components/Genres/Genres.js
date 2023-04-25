@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import Genres from "./GenresInDb";
+import React, { Component } from 'react';
+
+import Genres from './GenresInDb';
+
 
 export default class GenresShows extends Component {
   constructor(props) {
