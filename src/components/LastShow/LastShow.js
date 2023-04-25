@@ -13,7 +13,7 @@ export default class LastShow extends Component {
     };
   }
 
-  async getLastShows(){
+  getLastShows(){
     fetch('http://localhost:3005/api/shows/lastShow')
     .then(response => response.json())
     .then(show => {
