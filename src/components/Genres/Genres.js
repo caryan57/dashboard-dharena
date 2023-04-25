@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Genres from './GenresInDb';
-
+import GenresInDb from './GenresInDb';
 export default class Genres extends Component {
 
   constructor(props) {
@@ -30,7 +29,7 @@ export default class Genres extends Component {
   render() {
     return (
       <React.Fragment>
-        <Genres name={this.state.name}  />
+        <GenresInDb name={this.state.name}></GenresInDb>
       </React.Fragment>
     )
   }

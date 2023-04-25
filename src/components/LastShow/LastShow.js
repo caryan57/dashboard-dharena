@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LastShowInDb from './LastMovieInDb';
+import LastShowsInDb from './LastShowsInDb';
 
 export default class LastShow extends Component {
 
@@ -8,20 +8,20 @@ export default class LastShow extends Component {
     this.state = {
       image: [],
       description: [],
-      name: [],
-     
+      name: 'Name',
+      url: ''
     };
   }
 
-  getLastShows(){
-    fetch('http://localhost:3005/api/shows/lastshow')
+  async getLastShows(){
+    fetch('http://localhost:3005/api/shows/lastShow')
     .then(response => response.json())
     .then(show => {
-      console.log(show)
         this.setState({ 
-                    image: show.data.image,
-                    description: show.data.descriptionHeader,
-                    name: show.data.name                  
+                    image: show.data[0].imageUrl,
+                    description: show.data[0].descriptionHeader,
+                    name: show.data[0].name,
+                    url: `http://localhost:3005/shows/${show.data[0].id}`                  
     })
     })
     .catch(error => console.log(error));
@@ -34,7 +34,7 @@ export default class LastShow extends Component {
   render() {
     return (
       <React.Fragment>
-        <LastShowInDb image={this.state.image} description={this.state.description} name={this.state.name}  />
+        <LastShowsInDb image={this.state.image} description={this.state.description} name={this.state.name} url={this.state.url}  />
       </React.Fragment>
     )
   }
