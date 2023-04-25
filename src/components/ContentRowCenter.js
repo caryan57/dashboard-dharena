@@ -1,5 +1,5 @@
 import React from 'react';
-import GenresInDb from './Genres/GenresInDb';
+import GenresInDb from './Genres/Genres';
 import LastShow from './LastShow/LastShow';
 
 function ContentRowCenter(){
